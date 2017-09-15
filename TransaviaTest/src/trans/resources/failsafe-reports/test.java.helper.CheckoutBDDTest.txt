@@ -1,0 +1,58 @@
+-------------------------------------------------------------------------------
+Test set: test.java.helper.CheckoutBDDTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+initializationError(test.java.helper.CheckoutBDDTest)  Time elapsed: 0 sec  <<< ERROR!
+cucumber.runtime.CucumberException: Error parsing feature file SmokePIP.feature
+	at cucumber.runtime.FeatureBuilder.parse(FeatureBuilder.java:133)
+	at cucumber.runtime.model.CucumberFeature.loadFromFeaturePath(CucumberFeature.java:102)
+	at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:54)
+	at cucumber.runtime.model.CucumberFeature.load(CucumberFeature.java:34)
+	at cucumber.runtime.RuntimeOptions.cucumberFeatures(RuntimeOptions.java:201)
+	at cucumber.api.junit.Cucumber.<init>(Cucumber.java:60)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runner.Computer.getRunner(Computer.java:40)
+	at org.apache.maven.surefire.junitcore.ConfigurableParallelComputer.getRunner(ConfigurableParallelComputer.java:142)
+	at org.junit.runner.Computer$1.runnerForClass(Computer.java:31)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.runners.model.RunnerBuilder.runners(RunnerBuilder.java:101)
+	at org.junit.runners.model.RunnerBuilder.runners(RunnerBuilder.java:87)
+	at org.junit.runners.Suite.<init>(Suite.java:81)
+	at org.junit.runner.Computer.getSuite(Computer.java:28)
+	at org.apache.maven.surefire.junitcore.ConfigurableParallelComputer.getSuite(ConfigurableParallelComputer.java:134)
+	at org.junit.runner.Request.classes(Request.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:53)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:188)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:166)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:101)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+Caused by: gherkin.lexer.LexingError: Lexing error on line 5: '@Scenario: Searching for product
+@Given I am on the homepage
+@When I search for "202183868" SKU
+@Then I should land on "202183868" PIP page
+
+Scenario: Hide Price on PCP when Endeca flag indicates price should be hidden
+Given I am on the homepage
+Then I should land on PCP page
+Then I do not see the price on the PCP 
+And  I see the Contact Your Local Store message
+
+%_FEATURE_END_%'. See http://wiki.github.com/cucumber/gherkin/lexingerror for more information.
+	at gherkin.lexer.En.scan(En.java:872)
+	at gherkin.lexer.I18nLexer.scan(I18nLexer.java:36)
+	at gherkin.parser.Parser.parse(Parser.java:62)
+	at cucumber.runtime.FeatureBuilder.parse(FeatureBuilder.java:131)
+	... 34 more
